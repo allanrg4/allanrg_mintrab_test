@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: CMSRoot-2023
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: CMSAdmin-2023
+      MYSQL_DATABASE: laravel
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin:latest
+    environment:
+      PMA_HOST: db:3306
+      MYSQL_ROOT_PASSWORD: CMSRoot-2023
+    ports:
+      - 8090:80
