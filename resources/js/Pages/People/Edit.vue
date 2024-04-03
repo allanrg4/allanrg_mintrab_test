@@ -23,6 +23,14 @@ function submit() {
     <Layout>
         <Head title="Persona" />
 
+        <template #header>
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">
+                    Edición de Persona
+                </h1>
+            </div>
+        </template>
+
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="first_name" value="Primer Nombre (Requerido)" />

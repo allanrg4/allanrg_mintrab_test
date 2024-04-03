@@ -21,18 +21,20 @@ function getFullName(item) {
     <Layout>
         <Head title="Listado" />
 
-        <div class="flex justify-between items-center">
-            <h1 class="text-2xl font-bold">
-                Listado de personas
-            </h1>
+        <template #header>
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">
+                    Listado de personas
+                </h1>
 
-            <Link
-                :href="route('people.create')"
-                class="btn"
-            >
-                Crear persona
-            </Link>
-        </div>
+                <Link
+                    :href="route('people.create')"
+                    class="btn"
+                >
+                    Crear persona
+                </Link>
+            </div>
+        </template>
 
         <div class="container mx-auto">
             <table

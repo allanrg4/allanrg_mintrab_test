@@ -4,7 +4,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 
-import { Head, useForm } from '@inertiajs/vue3';
+import {Head, Link, useForm} from '@inertiajs/vue3';
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 const form = useForm({
@@ -31,6 +31,14 @@ function submit() {
 <template>
     <Layout>
         <Head title="Persona" />
+
+        <template #header>
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">
+                    Creación de Persona
+                </h1>
+            </div>
+        </template>
 
         <form @submit.prevent="submit">
             <div>
